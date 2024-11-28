@@ -26,6 +26,7 @@ Efficient Query Performance
 ## install and serve frontend app
 - cd frontend
 - npm install
+- npx tailwindcss -i ./src/input.css -o ./src/assets/main.css --watch
 
 ### for dev mode , hot reload
 - npm run dev 

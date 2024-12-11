@@ -35,6 +35,9 @@ defineProps({
                     <ArrowLeftPipeIcon class="mt-1"/>
                 </router-link>
             </div>
+            <div v-else-if="layoutType == 'bookingPage'" class="home-container mt-80 text-white">
+                
+            </div>
             <div v-else-if="layoutType == 'loginPage'" class="home-container mt-80 text-white">
                 <h1 class="font-bold text-4xl"><span class="text-blue-600">Login</span> Page</h1>
             </div>

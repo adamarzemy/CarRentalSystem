@@ -36,7 +36,7 @@
                                 <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
                             </svg>
                         </span>
-                        <span v-show="dataOpenSideBar">User</span>
+                        <span v-show="dataOpenSideBar">Profile</span>
                     </router-link>
                 </div>
                 <div class="   py-3 rounded-md cursor-pointer  text-gray-300 hover:text-white">
@@ -48,7 +48,7 @@
                                 <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
                             </svg>
                         </span>
-                        <span v-show="dataOpenSideBar">Product</span>
+                        <span v-show="dataOpenSideBar">Customer</span>
                     </router-link>
                 </div>
                 <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
@@ -60,31 +60,7 @@
                                 <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
                             </svg>
                         </span>
-                        <span v-show="dataOpenSideBar">Contact</span>
-                    </router-link>
-                </div>
-                <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-                    <router-link to="/customer" class="px-2 flex space-x-2">
-                        <!-- <span class="pi pi-shield " v-tooltip.right="'Customer'"></span>  -->
-                        <span v-tooltip.right="'Customer'" class="pt-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
-                                <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
-                            </svg>
-                        </span>
-                        <span v-show="dataOpenSideBar">Customer</span>
-                    </router-link>
-                </div>
-                <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-                    <router-link to="/activation" class="px-2 flex space-x-2">
-                        <!-- <span class="pi pi-check-circle " v-tooltip.right="'Activation'"></span>  -->
-                        <span v-tooltip.right="'Activation'" class="pt-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
-                                <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
-                            </svg>
-                        </span>
-                        <span v-show="dataOpenSideBar">Activation</span>
+                        <span v-show="dataOpenSideBar">Booking</span>
                     </router-link>
                 </div>
                 <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
@@ -96,8 +72,32 @@
                                 <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
                             </svg>
                         </span>
-                        <span v-show="dataOpenSideBar">Setting</span>
+                        <span v-show="dataOpenSideBar">Billing</span>
                     </div>
+                </div>
+                <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
+                    <router-link to="/customer" class="px-2 flex space-x-2">
+                        <!-- <span class="pi pi-shield " v-tooltip.right="'Customer'"></span>  -->
+                        <span v-tooltip.right="'Customer'" class="pt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
+                                <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <span v-show="dataOpenSideBar">Discount</span>
+                    </router-link>
+                </div>
+                <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
+                    <router-link to="/activation" class="px-2 flex space-x-2">
+                        <!-- <span class="pi pi-check-circle " v-tooltip.right="'Activation'"></span>  -->
+                        <span v-tooltip.right="'Activation'" class="pt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
+                                <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <span v-show="dataOpenSideBar">Vehicle</span>
+                    </router-link>
                 </div>
             </div>
             <div class="menu-man text-left px-2 justify-self-end whitespace-nowrap">

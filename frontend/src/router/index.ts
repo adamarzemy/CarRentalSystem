@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { useAuthStore } from '@store/auth';
 
 const routes = [
   {
@@ -25,6 +26,19 @@ const routes = [
     path: '/booking',
     name: 'UserBookingPage',
     component: () => import('@pages/user/BookingPage.vue'), 
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    beforeEnter: (to, from, next) => {
+      const authStore = useAuthStore();
+      const isAuth = authStore.getIsAuth; // Adjust based on your auth logic.
+      if (isAuth) {
+        next({ name: 'DashboardPage' });
+      } else {
+        next({ name: 'HomePage' });
+      }
+    },
   },
 ];
 

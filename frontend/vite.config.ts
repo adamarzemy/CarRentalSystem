@@ -20,6 +20,10 @@ export default defineConfig({
         '@pages': resolve(__dirname, 'src/pages'),
         '@icons': resolve(__dirname, 'src/icons'),
         '@images': resolve(__dirname, 'src/assets/images'),
+        '@router': resolve(__dirname, 'src/router'),
+        '@assets': resolve(__dirname, 'src/assets'),
+        '@store': resolve(__dirname, 'src/store'),
+        '@types': resolve(__dirname, 'src/types'),
     },
   },
 })

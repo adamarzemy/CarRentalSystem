@@ -18,6 +18,7 @@ const toggleSidebar = () => {
       <Navbar :dataOpenSideBar="openSidebar" :clickHambuger="toggleSidebar" :isAuth="isAuth"/>
       <div class="w-full h-[calc(100vh-50px)]">
         <!-- <router-view></router-view> -->
+        <slot name="content"></slot>
       </div>
     </div>
   </div>

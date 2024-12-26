@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="   py-3 rounded-sm cursor-pointer text-gray-300 hover:text-white">
-                    <router-link to="/" class="px-2 flex space-x-2">
+                    <router-link to="/dashboard" class="px-2 flex space-x-2">
                         <!-- <span class="pi pi-microsoft" v-tooltip.right="'Dashboard'"></span>  -->
                         <span v-tooltip.right="'Dashboard'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -28,9 +28,9 @@
                     </router-link>
                 </div>
                 <div class="   py-3 rounded-md cursor-pointer  text-gray-300 hover:text-white">
-                    <router-link to="/user" class="px-2 flex space-x-2">
+                    <router-link to="/admin/profile" class="px-2 flex space-x-2">
                         <!-- <span class="pi pi-user " v-tooltip.right="'User'"></span>  -->
-                        <span v-tooltip.right="'User'" class="pt-1">
+                        <span v-tooltip.right="'Profile'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
                                 <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
@@ -40,9 +40,9 @@
                     </router-link>
                 </div>
                 <div class="   py-3 rounded-md cursor-pointer  text-gray-300 hover:text-white">
-                    <router-link to="/product" class="px-2 flex space-x-2">
+                    <router-link to="/admin/customer" class="px-2 flex space-x-2">
                         <!-- <span class="pi pi-cart-plus " v-tooltip.right="'Product'"></span>  -->
-                        <span v-tooltip.right="'Product'" class="pt-1">
+                        <span v-tooltip.right="'Customer'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
                                 <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
@@ -52,9 +52,9 @@
                     </router-link>
                 </div>
                 <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-                    <router-link to="/contact" class="px-2 flex space-x-2">
+                    <router-link to="/admin/booking" class="px-2 flex space-x-2">
                         <!-- <span class="pi pi-whatsapp  " v-tooltip.right="'Contact'"></span>  -->
-                        <span v-tooltip.right="'Contact'" class="pt-1">
+                        <span v-tooltip.right="'Booking'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
                                 <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
@@ -64,21 +64,23 @@
                     </router-link>
                 </div>
                 <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-                    <div class="px-2 flex space-x-2">
+                    <!-- <div class="px-2 flex space-x-2"> -->
+                    <router-link to="/admin/billing" class="px-2 flex space-x-2">
                         <!-- <span class="pi pi-slack" v-tooltip.right="'Setting'"></span>  -->
-                        <span v-tooltip.right="'Setting'" class="pt-1">
+                        <span v-tooltip.right="'Billing'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
                                 <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
                             </svg>
                         </span>
                         <span v-show="dataOpenSideBar">Billing</span>
-                    </div>
+                    <!-- </div> -->
+                    </router-link>
                 </div>
                 <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-                    <router-link to="/customer" class="px-2 flex space-x-2">
+                    <router-link to="/admin/discount" class="px-2 flex space-x-2">
                         <!-- <span class="pi pi-shield " v-tooltip.right="'Customer'"></span>  -->
-                        <span v-tooltip.right="'Customer'" class="pt-1">
+                        <span v-tooltip.right="'Discount'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
                                 <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
@@ -88,9 +90,9 @@
                     </router-link>
                 </div>
                 <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-                    <router-link to="/activation" class="px-2 flex space-x-2">
+                    <router-link to="/admin/vehicle" class="px-2 flex space-x-2">
                         <!-- <span class="pi pi-check-circle " v-tooltip.right="'Activation'"></span>  -->
-                        <span v-tooltip.right="'Activation'" class="pt-1">
+                        <span v-tooltip.right="'Vehicle'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
                                 <path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-6a4 4 0 1 0 0-8a4 4 0 0 0 0 8" clip-rule="evenodd" />
@@ -102,7 +104,11 @@
             </div>
             <div class="menu-man text-left px-2 justify-self-end whitespace-nowrap">
                 <div class="   py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-                    <a href="https://website-nuxt-front.vercel.app/" target="_blank" class="px-2 flex space-x-2"><span class="pi pi-question" v-tooltip.right="'About Me'"></span> <span v-show="dataOpenSideBar">About Me</span></a>
+                    <router-link to="/" class="px-2 flex space-x-2">
+                        <span v-tooltip.right="'Logout'" class="pt-1">
+                        </span>
+                        <span v-show="dataOpenSideBar">Logout</span>
+                    </router-link>
                 </div>
             </div>
         </div>

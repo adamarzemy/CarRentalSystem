@@ -2,6 +2,7 @@
 import Sidebar from '@components/Sidebar.vue';
 import Navbar from '@components/Navbar.vue';
 import { ref } from 'vue';
+import PageHeader from '@components/PageHeader.vue';
 
 const isAuth = ref<boolean>(true)
 const openSidebar = ref<boolean>(true)
@@ -17,6 +18,9 @@ const toggleSidebar = () => {
     <div class="w-full h-full">
       <Navbar :dataOpenSideBar="openSidebar" :clickHambuger="toggleSidebar" :isAuth="isAuth"/>
       <div class="w-full h-[calc(100vh-50px)]">
+        <PageHeader
+            title="Dashboard"
+        />
         <!-- <router-view></router-view> -->
         <slot name="content"></slot>
       </div>

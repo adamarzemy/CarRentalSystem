@@ -11,6 +11,7 @@
       "@router/*": ["src/router/*"],
       "@assets/*": ["src/assets/*"],
       "@store/*": ["src/store/*"],
+      "@lib/*": ["src/lib/*"],
       "@profile/*": ["src/pages/profile/*"],
     }
   }

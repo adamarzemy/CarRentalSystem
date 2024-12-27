@@ -14,7 +14,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="bg-white border border-gray-200 rounded-lg shadow-md p-4">
+  <div class="bg-white border border-gray-200 rounded-lg shadow-md p-4" style="min-height: 750px;">
     <div v-if="title" class="mb-4 text-lg font-semibold text-gray-700">
       {{ title }}
     </div>

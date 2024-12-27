@@ -39,9 +39,9 @@ import HomeIcon from '@icons/HomeIcon.vue';
 </script>
 
 <template>
-  <div class="w-full bg-gray-100 ">
+  <div class="w-full bg-gray-100">
       <div class="flex justify-between items-center h-[50px]">
-          <div v-if="isAuth" class="p-4 cursor-pointer  hover:bg-gray-50" @click="clickHambuger">
+          <div v-if="isAuth" class="px-4 cursor-pointer  hover:bg-teal-100" @click="clickHambuger">
               <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -49,12 +49,12 @@ import HomeIcon from '@icons/HomeIcon.vue';
                   stroke="currentColor"
                   class="w-6 h-6"
               >
-                  <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6h16M4 12h16m-7 6h7"
-                  />
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                />
               </svg>
           </div>
           <div class="p-4" v-else>

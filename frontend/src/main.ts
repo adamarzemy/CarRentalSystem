@@ -5,7 +5,6 @@ import '@assets/main.css';
 import router from '@router/index';
 import { createPinia } from 'pinia';
 import '@assets/style.css';
-import PrimeVue from 'primevue/config';
 import DataTable from 'datatables.net-vue3';
 import DataTablesCore from 'datatables.net-dt';
 

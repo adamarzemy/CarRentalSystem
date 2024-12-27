@@ -1,21 +1,37 @@
 <script setup lang="ts">
 import Layout from '@layouts/auth/Layout.vue';
-
+import { useRouter } from 'vue-router';
 import { ref } from 'vue';
 import { useStaffProfileStore } from '@store/staff';
 import { Staff } from '@types/modules/staff';
 import TextInput from '@components/TextInput.vue';
+import Button from '@components/Button.vue';
+import ButtonGroup from '@components/ButtonGroup.vue';
+import { useToast } from '@lib/ui/toast/use-toast'; 
+
 
 const staffProfileStore = useStaffProfileStore();
-
+const { toast } = useToast();
 const staffProfile = ref<Staff>(staffProfileStore.getStaffProfile);
+const router = useRouter();
 
 async function handleSubmit() :Promise<void>{
     try {
         // const result :Promise<any> = await userStore.login(user);
         const result = await staffProfileStore.editStaffProfile(staffProfile.value);
+        toast({
+            title: 'Edit Profile successful',
+            description: 'Thank you',
+            variant: 'default',
+        });
         console.log('Edit Profile successful:', result);
+        router.push({ name: 'ProfilePage' });
     } catch (error) {
+        toast({
+            title: 'Edit Profile failed',
+            description: 'Please try again later',
+            variant: 'destructive',
+        });
         console.error("Edit Profile failed:", error);
     }
 }
@@ -112,7 +128,8 @@ async function handleSubmit() :Promise<void>{
             </div>
             </div> 
             <div class="flex justify-center">
-                <button class="bg-teal-500 px-3 py-2 rounded-md text-white hover:text-teal-800">Submit</button>
+                <!-- <Button bgColor="bg-red-500" textColor="text-black" btnHover="hover:text-red-800" /> -->
+                <Button type="submit"/>
             </div> 
         </div>
     </form>

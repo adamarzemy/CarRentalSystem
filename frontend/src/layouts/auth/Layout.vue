@@ -4,6 +4,7 @@ import Navbar from '@components/Navbar.vue';
 import { ref, watchEffect } from 'vue';
 import PageHeader from '@components/PageHeader.vue';
 import { useRoute } from 'vue-router';
+import Toaster from '@lib/ui/toast/Toaster.vue'
 
 const isAuth = ref<boolean>(true)
 const openSidebar = ref<boolean>(true)
@@ -27,6 +28,9 @@ watchEffect(() => {
     <div class="w-full h-full">
       <Navbar :dataOpenSideBar="openSidebar" :clickHambuger="toggleSidebar" :isAuth="isAuth"/>
       <div class="w-full h-[calc(100vh-50px)]">
+        <!-- <div style="overflow-y: hidden;"> -->
+          <Toaster />
+        <!-- </div> -->
         <PageHeader
             :title="pageTitle"
         />

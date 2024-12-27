@@ -20,6 +20,13 @@ export const useStaffProfileStore = defineStore('staffProfile', {
         },
     },
     actions: {
-
+        async editStaffProfile(staffProfile :Partial<Staff>){
+            try {
+                this.staffProfile = { ...this.staffProfile, ...staffProfile };
+                return this.staffProfile;
+            } catch (error) {
+                return error;
+            }
+        },
     }
 })

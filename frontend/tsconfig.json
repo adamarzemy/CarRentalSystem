@@ -10,7 +10,8 @@
       "@images/*": ["src/assets/images/*"],
       "@router/*": ["src/router/*"],
       "@assets/*": ["src/assets/*"],
-      "@store/*": ["src/store/*"] 
+      "@store/*": ["src/store/*"],
+      "@profile/*": ["src/pages/profile/*"],
     }
   }
 }

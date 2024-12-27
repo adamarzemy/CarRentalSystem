@@ -37,10 +37,38 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/admin/profile',
-    name: 'ProfilePage',
-    component: () => import('@pages/ProfilePage.vue'),
+    name: 'ProfileView',
+    component: () => import('@pages/profile/ProfileView.vue'),
     meta: { breadcrumb: 'Profile', title: 'Profile' },
+    children: [
+      {
+        path: '',
+        name: 'ProfilePage',
+        component: () => import('@pages/profile/ProfilePage.vue'),
+        meta: { title: 'Profile' },
+      },
+      {
+        path: 'edit',
+        name: 'ProfileEditPage',
+        component: () => import('@pages/profile/ProfileEditPage.vue'),
+        meta: { breadcrumb: 'Edit' ,title: 'Edit Profile' },
+      }
+    ]
   },
+  // {
+  //   path: '/admin/profile',
+  //   name: 'ProfilePage',
+  //   component: () => import('@pages/profile/ProfilePage.vue'),
+  //   meta: { breadcrumb: 'Profile', title: 'Profile' },
+  //   children: [
+  //     {
+  //       path: 'edit',
+  //       name: 'ProfileEditPage',
+  //       component: () => import('@pages/profile/ProfileEditPage.vue'),
+  //       meta: { breadcrumb: 'Edit' },
+  //     }
+  //   ]
+  // },
   {
     path: '/admin/customer',
     name: 'CustomerPage',

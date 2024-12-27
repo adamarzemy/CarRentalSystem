@@ -5,8 +5,10 @@ body{
     height: 100vh;
     /* color: black; */
     overflow-x: hidden;
+    /* overflow-y: hidden; */
 }
 
 *{
     overflow-x: hidden;
+    /* overflow-y: hidden; */
 }

@@ -24,6 +24,7 @@ export default defineConfig({
         '@assets': resolve(__dirname, 'src/assets'),
         '@store': resolve(__dirname, 'src/store'),
         '@types': resolve(__dirname, 'src/types'),
+        '@profile': resolve(__dirname, 'src/pages/profile'),
     },
   },
 })

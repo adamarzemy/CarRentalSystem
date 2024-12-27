@@ -41,7 +41,7 @@ defineProps({
                 {{ action.label }}
                 </button>
             </div>
-            <router-view/>
+            <!-- <router-view/> -->
             <BreadCrumb />
         </div>
     </div>

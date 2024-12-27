@@ -25,13 +25,13 @@ defineProps({
 </script>
 
 <template>
-    <div class="mb-6 flex mx-4">
+    <div class="mb-6 flex">
         <label class="text-black me-2 w-1/5">{{ labelName }}</label>
         <select v-model="model" :class="[
             'border focus:outline-none focus:ring-2 focus:ring-black', // Default black border
             message ? '!ring-2 ring-red-500' : 'border-black' // Red ring when there's a message
         ]"
-        class="rounded w-2/5">
+        class="rounded w-4/5">
             <option disabled value="">{{ name }}</option>
             <option v-for="(item, index) in items" :key="index" :value="item">
                 {{ item }}

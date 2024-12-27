@@ -12,12 +12,12 @@ defineProps({
         <div class="content">
             <nav class="flex flex-col sm:flex-row justify-end items-center space-y-2 sm:space-y-0 sm:space-x-5 gap-2">
                 <ul class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-5">
-                    <li>
+                    <li class="py-2">
                         <router-link to="/" class="nav-link">
                             Home
                         </router-link>
                     </li>
-                    <li>
+                    <li class="py-2">
                         <router-link to="/login" class="nav-link">
                             Login
                         </router-link>

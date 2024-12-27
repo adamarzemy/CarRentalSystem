@@ -6,7 +6,7 @@ const model = defineModel({
 defineProps({
     labelName: {
         type: String,
-        required: true,
+        required: false,
     },
     type: {
         type: String,
@@ -21,8 +21,8 @@ defineProps({
 </script>
 
 <template>
-    <div class="mb-6 flex mx-4">
-        <label class="text-black me-2 w-1/5">{{ labelName }}</label>
+    <div class="flex">
+        <label v-if="labelName" class="text-black me-2 w-1/5">{{ labelName }}</label>
         <input 
             :type="type" 
             v-model="model" 
@@ -34,7 +34,7 @@ defineProps({
                     ? '!ring-2 ring-red-500' // Red ring when there's a message
                     : 'border-black' // Black border when no message
             ]" 
-            class="rounded w-2/5 text-black" 
+            class="rounded w-4/5 text-black px-2" 
             :readonly="readonly"
         />
         <small class="error text-red-500" v-if="message">{{ message }}</small>

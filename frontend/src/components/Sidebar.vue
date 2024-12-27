@@ -16,7 +16,11 @@
                     </div>
                 </div>
                 <div class="   py-3 rounded-sm cursor-pointer text-gray-300 hover:text-white">
-                    <router-link to="/dashboard" class="px-2 flex space-x-2">
+                    <router-link 
+                        to="/dashboard" 
+                        class="px-2 flex space-x-2 hover:text-teal-700"
+                        :class="{ 'text-teal-400': $route.path === '/dashboard' }"
+                    >
                         <!-- <span class="pi pi-microsoft" v-tooltip.right="'Dashboard'"></span>  -->
                         <span v-tooltip.right="'Dashboard'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -28,7 +32,11 @@
                     </router-link>
                 </div>
                 <div class="   py-3 rounded-md cursor-pointer  text-gray-300 hover:text-white">
-                    <router-link to="/admin/profile" class="px-2 flex space-x-2">
+                    <router-link 
+                        to="/admin/profile" 
+                        class="px-2 flex space-x-2 hover:text-teal-700"
+                        :class="{ 'text-teal-400': $route.path === '/admin/profile' }"
+                    >
                         <!-- <span class="pi pi-user " v-tooltip.right="'User'"></span>  -->
                         <span v-tooltip.right="'Profile'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -40,7 +48,11 @@
                     </router-link>
                 </div>
                 <div class="   py-3 rounded-md cursor-pointer  text-gray-300 hover:text-white">
-                    <router-link to="/admin/customer" class="px-2 flex space-x-2">
+                    <router-link 
+                        to="/admin/customer" 
+                        class="px-2 flex space-x-2 hover:text-teal-700"
+                        :class="{ 'text-teal-400': $route.path === '/admin/customer' }"
+                    >
                         <!-- <span class="pi pi-cart-plus " v-tooltip.right="'Product'"></span>  -->
                         <span v-tooltip.right="'Customer'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -52,8 +64,11 @@
                     </router-link>
                 </div>
                 <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-                    <router-link to="/admin/booking" class="px-2 flex space-x-2">
-                        <!-- <span class="pi pi-whatsapp  " v-tooltip.right="'Contact'"></span>  -->
+                    <router-link 
+                        to="/admin/booking" 
+                        class="px-2 flex space-x-2 hover:text-teal-700"
+                        :class="{ 'text-teal-400': $route.path === '/admin/booking' }"
+                    >
                         <span v-tooltip.right="'Booking'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
@@ -64,9 +79,11 @@
                     </router-link>
                 </div>
                 <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-                    <!-- <div class="px-2 flex space-x-2"> -->
-                    <router-link to="/admin/billing" class="px-2 flex space-x-2">
-                        <!-- <span class="pi pi-slack" v-tooltip.right="'Setting'"></span>  -->
+                    <router-link 
+                        to="/admin/billing" 
+                        class="px-2 flex space-x-2 hover:text-teal-700"
+                        :class="{ 'text-teal-400': $route.path === '/admin/billing' }"
+                    >
                         <span v-tooltip.right="'Billing'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
@@ -74,12 +91,14 @@
                             </svg>
                         </span>
                         <span v-show="dataOpenSideBar">Billing</span>
-                    <!-- </div> -->
                     </router-link>
                 </div>
                 <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-                    <router-link to="/admin/discount" class="px-2 flex space-x-2">
-                        <!-- <span class="pi pi-shield " v-tooltip.right="'Customer'"></span>  -->
+                    <router-link 
+                        to="/admin/discount" 
+                        class="px-2 flex space-x-2 hover:text-teal-700"
+                        :class="{ 'text-teal-400': $route.path === '/admin/discount' }"
+                    >
                         <span v-tooltip.right="'Discount'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
@@ -90,8 +109,11 @@
                     </router-link>
                 </div>
                 <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-                    <router-link to="/admin/vehicle" class="px-2 flex space-x-2">
-                        <!-- <span class="pi pi-check-circle " v-tooltip.right="'Activation'"></span>  -->
+                    <router-link 
+                        to="/admin/vehicle" 
+                        class="px-2 flex space-x-2 hover:text-teal-700"
+                        :class="{ 'text-teal-400': $route.path === '/admin/vehicle' }"
+                    >
                         <span v-tooltip.right="'Vehicle'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M10 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />

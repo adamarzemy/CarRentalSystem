@@ -69,11 +69,25 @@ const routes: RouteRecordRaw[] = [
   //     }
   //   ]
   // },
+  // {
+  //   path: '/admin/customer',
+  //   name: 'CustomerPage',
+  //   component: () => import('@pages/customer/CustomerPage.vue'),
+  //   meta: { breadcrumb: 'Customer', title: 'Customer' },
+  // },
   {
     path: '/admin/customer',
-    name: 'CustomerPage',
-    component: () => import('@pages/customer/CustomerPage.vue'),
+    name: 'CustomerView',
+    component: () => import('@pages/customer/CustomerView.vue'),
     meta: { breadcrumb: 'Customer', title: 'Customer' },
+    children: [
+      {
+        path: '',
+        name: 'CustomerPage',
+        component: () => import('@pages/customer/CustomerPage.vue'),
+        meta: { title: 'Customer' },
+      },
+    ]
   },
   {
     path: '/admin/booking',

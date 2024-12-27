@@ -42,68 +42,54 @@ import { h, ref } from 'vue'
 // import Button from './Button.vue'
 import ArrowUpDownIcon from '@icons/ArrowUpDownIcon.vue'
 
-export interface Payment {
-    id: string
-  amount: number
-  status: 'pending' | 'processing' | 'success' | 'failed'
-  email: string
+import { Customer } from '@types/modules/customer'
+
+interface TableLibProps<T> {
+  data: T[];
+  columns: (keyof T)[];
+  dataType: string; // This will hold the type name (like "Customer")
 }
 
-const data: Payment[] = [
-  {
-    id: 'm5gr84i9',
-    amount: 316,
-    status: 'success',
-    email: 'ken99@yahoo.com',
-  },
-  {
-    id: '3u1reuv4',
-    amount: 242,
-    status: 'success',
-    email: 'Abe45@gmail.com',
-  },
-  {
-    id: 'derv1ws0',
-    amount: 837,
-    status: 'processing',
-    email: 'Monserrat44@gmail.com',
-  },
-  {
-    id: '5kma53ae',
-    amount: 874,
-    status: 'success',
-    email: 'Silas22@gmail.com',
-  },
-  {
-    id: 'bhqecj4p',
-    amount: 721,
-    status: 'failed',
-    email: 'carmella@hotmail.com',
-  },
-]
+// Define the props with a generic that will be passed from the parent
+const props = defineProps<TableLibProps<any>>();
+
+// Use the inferred type for data
+let data;
+if(props.dataType === "Customer"){
+  data = ref<Customer[]>(props.data); // Now this `data` has the inferred type based on `props.data`
+}
 
 const inputVModel = ref('')
-
-const columns: ColumnDef<Payment>[] = [
+const columns: any[] = [
+  // {
+  //   id: 'select',
+  //   header: ({ table }) => h(Checkbox, {
+  //     'modelValue': table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate'),
+  //     'onUpdate:modelValue': value => table.toggleAllPageRowsSelected(!!value),
+  //     'ariaLabel': 'Select all',
+  //   }),
+  //   cell: ({ row }) => h(Checkbox, {
+  //     'modelValue': row.getIsSelected(),
+  //     'onUpdate:modelValue': value => row.toggleSelected(!!value),
+  //     'ariaLabel': 'Select row',
+  //   }),
+  //   enableSorting: false,
+  //   enableHiding: false,
+  // },
   {
-    id: 'select',
-    header: ({ table }) => h(Checkbox, {
-      'modelValue': table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate'),
-      'onUpdate:modelValue': value => table.toggleAllPageRowsSelected(!!value),
-      'ariaLabel': 'Select all',
-    }),
-    cell: ({ row }) => h(Checkbox, {
-      'modelValue': row.getIsSelected(),
-      'onUpdate:modelValue': value => row.toggleSelected(!!value),
-      'ariaLabel': 'Select row',
-    }),
-    enableSorting: false,
-    enableHiding: false,
+    accessorKey: 'no',  // You can use any name for the accessorKey
+    header: 'No',
+    cell: ({ row }) => h('div', {}, row.index + 1),  // Using row.index to increment the value
   },
   {
-    accessorKey: 'status',
-    header: 'Status',
-    cell: ({ row }) => h('div', { class: 'capitalize' }, row.getValue('status')),
+    accessorKey: 'first_name',
+    header: 'First Name',
+    cell: ({ row }) => h('div', { class: 'capitalize' }, row.getValue('first_name')),
+  },
+  {
+    accessorKey: 'last_name',
+    header: 'Last Name',
+    cell: ({ row }) => h('div', { class: 'capitalize' }, row.getValue('last_name')),
   },
   {
     accessorKey: 'email',
@@ -116,22 +102,42 @@ const columns: ColumnDef<Payment>[] = [
     cell: ({ row }) => h('div', { class: 'lowercase' }, row.getValue('email')),
   },
   {
-    accessorKey: 'amount',
-    header: () => h('div', { class: 'text-right' }, 'Amount'),
+    accessorKey: 'address',
+    header: 'Address',
+    cell: ({ row }) => h('div', { class: 'capitalize' }, row.getValue('address')),
+  },
+  {
+    accessorKey: 'date_of_birth',
+    header: 'Date Of Birth',
     cell: ({ row }) => {
-      const amount = Number.parseFloat(row.getValue('amount'))
-
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-      }).format(amount)
-
-      return h('div', { class: 'text-right font-medium' }, formatted)
+      const date = row.getValue('date_of_birth');
+      const formattedDate = date ? new Date(date).toLocaleDateString() : 'N/A';  // Default if no date
+      return h('div', { class: 'capitalize' }, formattedDate);
     },
   },
   {
+    accessorKey: 'license_type',
+    header: 'License Type',
+    cell: ({ row }) => h('div', { class: 'capitalize' }, row.getValue('license_type')),
+  },
+  // {
+  //   accessorKey: 'amount',
+  //   header: () => h('div', { class: 'text-right' }, 'Amount'),
+  //   cell: ({ row }) => {
+  //     const amount = Number.parseFloat(row.getValue('amount'))
+
+  //     // Format the amount as a dollar amount
+  //     const formatted = new Intl.NumberFormat('en-US', {
+  //       style: 'currency',
+  //       currency: 'USD',
+  //     }).format(amount)
+
+  //     return h('div', { class: 'text-right font-medium' }, formatted)
+  //   },
+  // },
+  {
     id: 'actions',
+    header: 'Action',
     enableHiding: false,
     cell: ({ row }) => {
       const payment = row.original
@@ -247,10 +253,10 @@ const table = useVueTable({
     </div>
 
     <div class="flex items-end justify-end space-x-2 py-4">
-      <div class="flex-1 text-sm text-muted-foreground">
+      <!-- <div class="flex-1 text-sm text-muted-foreground">
         {{ table.getFilteredSelectedRowModel().rows.length }} of
         {{ table.getFilteredRowModel().rows.length }} row(s) selected.
-      </div>
+      </div> -->
       <div class="space-x-2">
         <Button
           variant="outline"

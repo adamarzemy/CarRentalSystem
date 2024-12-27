@@ -1,26 +1,18 @@
 <script setup lang="ts">
 import Layout from '@layouts/auth/Layout.vue';
-
 import { ref } from 'vue';
 import { useVehicleStore } from '@store/vehicle';
 import Card from '@components/Card.vue'; 
 import Table from '@components/Table.vue';
 import TableLib from '@components/TableLib.vue';
+import { useCustomerStore } from '@store/customer';
+import { Customer } from '@types/modules/customer';
 
-const vehicleStore = useVehicleStore();
-const vehicles :any = vehicleStore.getVehicles;
-
+const customerStore = useCustomerStore();
+const customers = ref<Customer[]>(customerStore.getCustomers);
+const columns: Array<string> = ['Name', 'Email', 'Address', 'Date Of Birth', 'License Type'];
 </script>
 
 <template>
-  <Layout>
-    <template #content>
-        <div style="margin-top: 2rem;"></div>
-        <div class="mx-auto px-4 mb-8">
-            <Card>
-                <TableLib/>
-            </Card>
-        </div>
-    </template>
-  </Layout>
+  <TableLib :data="customers" :columns="columns" dataType="Customer" />
 </template>

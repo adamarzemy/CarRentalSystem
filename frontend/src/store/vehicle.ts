@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { Vehicle } from "@types/vehicle";
+import { Vehicle } from "@types/modules/vehicle";
 
 export const useVehicleStore = defineStore('vehicle', {
     state: () => ({

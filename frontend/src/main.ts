@@ -2,11 +2,10 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import axios from 'axios';
 import '@assets/main.css';
-import router from '@router';
+import router from '@router/index';
 import { createPinia } from 'pinia';
 import '@assets/style.css';
 import PrimeVue from 'primevue/config';
-import Aura from '@primevue/themes/aura';
 import DataTable from 'datatables.net-vue3';
 import DataTablesCore from 'datatables.net-dt';
 
@@ -18,9 +17,4 @@ const pinia = createPinia();
 app.config.globalProperties.$axios = axios; // Make Axios globally available
 app.use(pinia);
 app.use(router);
-app.use(PrimeVue, {
-    theme: {
-        preset: Aura
-    }
-});
 app.mount('#app');

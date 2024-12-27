@@ -72,7 +72,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/admin/customer',
     name: 'CustomerPage',
-    component: () => import('@pages/CustomerPage.vue'),
+    component: () => import('@pages/customer/CustomerPage.vue'),
     meta: { breadcrumb: 'Customer', title: 'Customer' },
   },
   {

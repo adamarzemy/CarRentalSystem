@@ -19,7 +19,7 @@
                     <router-link 
                         to="/dashboard" 
                         class="px-2 flex space-x-2 hover:text-teal-700"
-                        :class="{ 'text-teal-400': $route.path.startsWith('/admin/dashboard') }"
+                        :class="{ 'text-teal-400': $route.path.startsWith('/dashboard') }"
                     >
                         <!-- <span class="pi pi-microsoft" v-tooltip.right="'Dashboard'"></span>  -->
                         <span v-tooltip.right="'Dashboard'" class="pt-1">

@@ -5,6 +5,7 @@ import { ref } from 'vue';
 import { useVehicleStore } from '@store/vehicle';
 import Card from '@components/Card.vue'; 
 import Table from '@components/Table.vue';
+import TableLib from '@components/TableLib.vue';
 
 const vehicleStore = useVehicleStore();
 const vehicles :any = vehicleStore.getVehicles;
@@ -14,10 +15,10 @@ const vehicles :any = vehicleStore.getVehicles;
 <template>
   <Layout>
     <template #content>
-        <div style="margin-top: 4rem;"></div>
-        <div class="max-w-screen-xl mx-auto px-4">
-            <Card title="Vehicle" footer="vehicles">
-                <Table/>
+        <div style="margin-top: 2rem;"></div>
+        <div class="mx-auto px-4 mb-8">
+            <Card>
+                <TableLib/>
             </Card>
         </div>
     </template>

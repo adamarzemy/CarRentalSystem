@@ -19,7 +19,7 @@
                     <router-link 
                         to="/dashboard" 
                         class="px-2 flex space-x-2 hover:text-teal-700"
-                        :class="{ 'text-teal-400': $route.path === '/dashboard' }"
+                        :class="{ 'text-teal-400': $route.path.startsWith('/admin/dashboard') }"
                     >
                         <!-- <span class="pi pi-microsoft" v-tooltip.right="'Dashboard'"></span>  -->
                         <span v-tooltip.right="'Dashboard'" class="pt-1">
@@ -35,7 +35,7 @@
                     <router-link 
                         to="/admin/profile" 
                         class="px-2 flex space-x-2 hover:text-teal-700"
-                        :class="{ 'text-teal-400': $route.path === '/admin/profile' }"
+                        :class="{ 'text-teal-400': $route.path.startsWith('/admin/profile') }"
                     >
                         <!-- <span class="pi pi-user " v-tooltip.right="'User'"></span>  -->
                         <span v-tooltip.right="'Profile'" class="pt-1">
@@ -51,7 +51,7 @@
                     <router-link 
                         to="/admin/customer" 
                         class="px-2 flex space-x-2 hover:text-teal-700"
-                        :class="{ 'text-teal-400': $route.path === '/admin/customer' }"
+                        :class="{ 'text-teal-400': $route.path.startsWith('/admin/customer') }"
                     >
                         <!-- <span class="pi pi-cart-plus " v-tooltip.right="'Product'"></span>  -->
                         <span v-tooltip.right="'Customer'" class="pt-1">
@@ -67,7 +67,7 @@
                     <router-link 
                         to="/admin/booking" 
                         class="px-2 flex space-x-2 hover:text-teal-700"
-                        :class="{ 'text-teal-400': $route.path === '/admin/booking' }"
+                        :class="{ 'text-teal-400': $route.path.startsWith('/admin/booking') }"
                     >
                         <span v-tooltip.right="'Booking'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -82,7 +82,7 @@
                     <router-link 
                         to="/admin/billing" 
                         class="px-2 flex space-x-2 hover:text-teal-700"
-                        :class="{ 'text-teal-400': $route.path === '/admin/billing' }"
+                        :class="{ 'text-teal-400': $route.path.startsWith('/admin/billing') }"
                     >
                         <span v-tooltip.right="'Billing'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -97,7 +97,7 @@
                     <router-link 
                         to="/admin/discount" 
                         class="px-2 flex space-x-2 hover:text-teal-700"
-                        :class="{ 'text-teal-400': $route.path === '/admin/discount' }"
+                        :class="{ 'text-teal-400': $route.path.startsWith('/admin/discount') }"
                     >
                         <span v-tooltip.right="'Discount'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
@@ -112,7 +112,7 @@
                     <router-link 
                         to="/admin/vehicle" 
                         class="px-2 flex space-x-2 hover:text-teal-700"
-                        :class="{ 'text-teal-400': $route.path === '/admin/vehicle' }"
+                        :class="{ 'text-teal-400': $route.path.startsWith('/admin/vehicle') }"
                     >
                         <span v-tooltip.right="'Vehicle'" class="pt-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">

@@ -46,11 +46,11 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # Ensure this comes before CSRF middleware
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -71,10 +71,10 @@ TEMPLATES = [
     },
 ]
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://127.0.0.1:5174", 
-#     "http://localhost:5174/"
-# ]
+CORS_ALLOWED_ORIGINS = [
+     "http://127.0.0.1:5174", 
+     "http://localhost:5174/"
+ ]
 CORS_ALLOW_ALL_ORIGINS = True
 
 
@@ -84,12 +84,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -109,6 +109,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
 
 
 # Internationalization
@@ -132,3 +134,28 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Database
+# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+
+
+import oracledb
+oracledb.init_oracle_client()
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlserver',
+        'NAME': 'your_database_name',
+        'USER': '',  # Leave empty for Windows Authentication
+        'PASSWORD': '',
+        'HOST': 'LAPTOP-D69OMCKR\\SQLEXPRESS01',
+        'PORT': '',  # Default SQL Server port
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
+    }
+}
+
+

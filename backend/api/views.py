@@ -1,26 +1,59 @@
-from django.shortcuts import render
-
+from django.http import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import VehicleSerializer
-from .services.vehicle import get_available_vehicles
+from .models import *
+from .serializers import *
 
-class HelloWorldView(APIView):
+class HomeView(APIView):
     def get(self, request):
-        return Response({"message": "Car Rental System"})
+        return Response({"message": "Welcome to the Car Rental System!"}, status=200)
+
+
+class CustomerView(APIView):
+    def get(self, request):
+        customers = Customer.objects.all()
+        serializer = CustomerSerializer(customers, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 class VehicleView(APIView):
     def get(self, request):
-        return get_available_vehicles()
-    #     vehicles = get_available_vehicles()
-    #     serializer = VehicleSerializer(vehicles, many=True)
-    #     return Response(serializer.data, status=status.HTTP_200_OK)
+        vehicles = Vehicle.objects.all()
+        serializer = VehicleSerializer(vehicles, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
-    # def post(self, request):
-    #     serializer = VehicleSerializer(data=request.data)
-    #     if serializer.is_valid():
-    #         vehicle = create_vehicle(serializer.validated_data)
-    #         return Response(VehicleSerializer(vehicle).data, status=status.HTTP_201_CREATED)
-    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+class BookingView(APIView):
+    def get(self, request):
+        bookings = Booking.objects.all()
+        serializer = BookingSerializer(bookings, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
+class VehicleMaintenanceView(APIView):
+    def get(self, request):
+        maintenances = VehicleMaintenance.objects.all()
+        serializer = VehicleMaintenanceSerializer(maintenances, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+class StaffView(APIView):
+    def get(self, request):
+        staff_members = Staff.objects.all()
+        serializer = StaffSerializer(staff_members, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+class BillingView(APIView):
+    def get(self, request):
+        billings = Billing.objects.all()
+        serializer = BillingSerializer(billings, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+class DiscountView(APIView):
+    def get(self, request):
+        discounts = Discount.objects.all()
+        serializer = DiscountSerializer(discounts, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+class PaymentView(APIView):
+    def get(self, request):
+        payments = Payment.objects.all()
+        serializer = PaymentSerializer(payments, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

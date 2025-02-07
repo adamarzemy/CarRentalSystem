@@ -33,6 +33,14 @@ Efficient Query Performance
 
 ### for build assets bundling
 - npm run build
+  
+## install and serve backend app
+Create virtual environment : python3 -m venv .venv
+Activate environtment : .venv\Scripts\activate
+Install backend dependecies : pip install django djangorestframework
+                              pip install django-cors-headers
+Set up backend database : python manage.py migrate
+Run backend server : cd backend python manage.py runserver
 
 ## view app
 - http://localhost:5174/ (frontend)

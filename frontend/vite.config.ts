@@ -10,16 +10,19 @@ export default defineConfig({
       '/api': {
         target: 'http://127.0.0.1:8000',
         changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
       },
     },
   },
   resolve: {
     alias: {
-        '@layouts': resolve(__dirname, 'src/layouts'),
-        '@components': resolve(__dirname, 'src/components'),
-        '@pages': resolve(__dirname, 'src/pages'),
-        '@icons': resolve(__dirname, 'src/icons'),
-        '@images': resolve(__dirname, 'src/assets/images'),
+      '@': resolve(__dirname, 'src'),
+      '@layouts': resolve(__dirname, 'src/layouts'),
+      '@components': resolve(__dirname, 'src/components'),
+      '@pages': resolve(__dirname, 'src/pages'),
+      '@icons': resolve(__dirname, 'src/icons'),
+      '@images': resolve(__dirname, 'src/assets/images'),
+      '@services': resolve(__dirname, 'src/services'),
     },
   },
 })

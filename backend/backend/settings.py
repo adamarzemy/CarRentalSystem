@@ -72,9 +72,9 @@ TEMPLATES = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-     "http://127.0.0.1:5174", 
-     "http://localhost:5174/"
- ]
+    "http://localhost:5174",
+    "http://127.0.0.1:5174",
+]
 CORS_ALLOW_ALL_ORIGINS = True
 
 
@@ -84,10 +84,22 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+# Comment out Oracle settings
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.oracle',
+#         'NAME': 'CarRentalSystem',
+#         'USER': 'system',
+#         'PASSWORD': 'system',
+#         'HOST': 'localhost',
+#         'PORT': '1521',
 #     }
 # }
 
@@ -134,28 +146,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-
-import oracledb
-oracledb.init_oracle_client()
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlserver',
-        'NAME': 'your_database_name',
-        'USER': '',  # Leave empty for Windows Authentication
-        'PASSWORD': '',
-        'HOST': 'LAPTOP-D69OMCKR\\SQLEXPRESS01',
-        'PORT': '',  # Default SQL Server port
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-        },
-    }
-}
 
 

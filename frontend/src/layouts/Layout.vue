@@ -1,9 +1,19 @@
 <script setup lang="ts">
 import ArrowLeftPipeIcon from '@icons/ArrowLeftPipeIcon.vue';
+import { onMounted } from 'vue';
 
 defineProps({
     layoutType: String,
-})
+});
+
+onMounted(() => {
+    if (typeof document !== 'undefined') {
+        const textElement = document.querySelector('.animated-text');
+        if (textElement) {
+            textElement.classList.add('fade-in');
+        }
+    }
+});
 </script>
 
 <template>
@@ -25,13 +35,17 @@ defineProps({
                 </ul>
             </nav>
             <div v-if="layoutType == 'homePage'" class="home-container mt-80 text-white">
-                <h1 class="font-bold text-4xl">Hello , Welcome to <span class="text-blue-600">Car Rental</span> System</h1>
+                <h1 class="animated-text font-bold text-4xl">
+                    <span class="welcome-text">Welcome to</span>
+                    <span class="car-rental-text text-blue-600">Car Rental</span>
+                    <span class="system-text">System</span>
+                </h1>
                 <router-link 
                     to="/booking" 
-                    class="flex gap-2 justify-center rounded-full"
+                    class="booking-button flex gap-2 justify-center rounded-full mt-8"
                     tag="button"
                 >
-                    <span>Booking Now ! </span>
+                    <span>Book Now!</span>
                     <ArrowLeftPipeIcon class="mt-1"/>
                 </router-link>
             </div>
@@ -72,7 +86,7 @@ defineProps({
 .nav-link {
     font-weight: 600;
     padding: 10px 20px;
-    color: black;
+    color: white;
     text-decoration: none;
     background: transparent;
     border-radius: 8px;
@@ -82,6 +96,55 @@ defineProps({
 .nav-link:hover {
     background-color: #14b8a6;
     color: white;
+}
+
+/* Animation styles */
+.animated-text {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.animated-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.welcome-text {
+    animation: fadeInUp 0.8s ease forwards 0.5s;
+}
+
+.car-rental-text {
+    animation: fadeInUp 0.8s ease forwards 1s;
+}
+
+.system-text {
+    animation: fadeInUp 0.8s ease forwards 1.5s;
+}
+
+.booking-button {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards 2s;
+    padding: 12px 24px;
+    background-color: #14b8a6;
+    color: white;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.booking-button:hover {
+    transform: translateY(-2px);
+    background-color: #0d9488;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 640px) {
@@ -95,6 +158,10 @@ defineProps({
 
     .nav-link {
         font-size: 14px;
+    }
+
+    .animated-text {
+        font-size: 1.8rem;
     }
 }
 </style>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ArrowLeftPipeIcon from '@icons/ArrowLeftPipeIcon.vue';
 import { onMounted } from 'vue';
+import Toaster from '@lib/ui/toast/Toaster.vue'
 
 defineProps({
     layoutType: String,
@@ -22,36 +23,43 @@ onMounted(() => {
         <div class="content">
             <nav class="flex flex-col sm:flex-row justify-end items-center space-y-2 sm:space-y-0 sm:space-x-5 gap-2">
                 <ul class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-5">
-                    <li>
+                    <li class="py-2">
                         <router-link to="/" class="nav-link">
                             Home
                         </router-link>
                     </li>
-                    <li>
+                    <li class="py-2">
                         <router-link to="/login" class="nav-link">
                             Login
                         </router-link>
                     </li>
                 </ul>
             </nav>
-            <div v-if="layoutType == 'homePage'" class="home-container mt-80 text-white">
-                <h1 class="animated-text font-bold text-4xl">
-                    <span class="welcome-text">Welcome to</span>
-                    <span class="car-rental-text text-blue-600">Car Rental</span>
-                    <span class="system-text">System</span>
-                </h1>
-                <router-link 
+            <div 
+                v-if="layoutType == 'homePage'" 
+                class="home-container pt-80 text-white flex flex-col items-center"
+            >
+                <div class="max-w-screen-lg text-center px-4">
+                    <h1 class="font-bold text-3xl sm:text-3xl md:text-3xl lg:text-3xl leading-tight">
+                    Hello, Welcome to <span class="text-blue-600">Car Rental</span> System
+                    </h1>
+                    <router-link 
                     to="/booking" 
-                    class="booking-button flex gap-2 justify-center rounded-full mt-8"
+                    class="flex gap-2 justify-center items-center mt-6 px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all"
                     tag="button"
-                >
-                    <span>Book Now!</span>
+                    >
+                    <span>Booking Now!</span>
                     <ArrowLeftPipeIcon class="mt-1"/>
-                </router-link>
+                    </router-link>
+                </div>
             </div>
-            <div v-else-if="layoutType == 'loginPage'" class="home-container mt-80 text-white">
+            <div v-else-if="layoutType == 'bookingPage'" class="home-container pt-80 text-white">
+                
+            </div>
+            <div v-else-if="layoutType == 'loginPage'" class="home-container pt-80 text-white">
                 <h1 class="font-bold text-4xl"><span class="text-blue-600">Login</span> Page</h1>
             </div>
+            <Toaster />
         </div>
     </div>
 </template>

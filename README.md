@@ -26,7 +26,7 @@ Efficient Query Performance
 ## install and serve frontend app
 - cd frontend
 - npm install
-- npx tailwindcss -i ./src/input.css -o ./src/assets/main.css --watch
+- npx tailwindcss -i ./src/assets/main.css -o ./src/assets/output.css --watch
 
 ### for dev mode , hot reload
 - npm run dev 
@@ -36,4 +36,4 @@ Efficient Query Performance
 
 ## view app
 - http://localhost:5174/ (frontend)
-- http://127.0.0.1:8000/ (backend)
+- http://127.0.0.1:8000/ (backend) test

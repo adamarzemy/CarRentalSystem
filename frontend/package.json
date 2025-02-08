@@ -9,10 +9,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "@iconify/vue": "^4.1.2",
+    "@primevue/themes": "^4.2.5",
+    "@radix-icons/vue": "^1.0.0",
+    "@tanstack/vue-table": "^8.20.5",
     "axios": "^1.7.7",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "datatables.net-dt": "^2.1.8",
+    "datatables.net-vue3": "^3.0.3",
+    "pinia": "^2.3.0",
+    "primevue": "^4.2.5",
+    "radix-vue": "^1.9.11",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
     "vue": "^3.5.12",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "vue-ultimate-skeleton-cards": "^1.0.3"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
